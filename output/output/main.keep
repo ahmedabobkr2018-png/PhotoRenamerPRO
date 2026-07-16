@@ -1,1 +1,26 @@
+import os
+import cv2
 
+# PhotoRenamerPRO - First Test
+
+IMAGE_FOLDER = "images"
+
+def check_images():
+    if not os.path.exists(IMAGE_FOLDER):
+        print("Images folder not found")
+        return
+
+    images = []
+
+    for file in os.listdir(IMAGE_FOLDER):
+        if file.lower().endswith((".jpg", ".jpeg", ".png")):
+            images.append(file)
+
+    print("Total images found:", len(images))
+
+    for img in images:
+        print(img)
+
+
+if __name__ == "__main__":
+    check_images()
